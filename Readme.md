@@ -1,3 +1,10 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [Default.aspx](./CS/T333639/Default.aspx) (VB: [Default.aspx](./VB/T333639/Default.aspx))
+* **[SampleReport.cs](./CS/T333639/SampleReport.cs) (VB: [SampleReport.Designer.vb](./VB/T333639/SampleReport.Designer.vb))**
+* [SampleReport.Designer.cs](./CS/T333639/SampleReport.Designer.cs) (VB: [SampleReport.Designer.vb](./VB/T333639/SampleReport.Designer.vb))
+<!-- default file list end -->
 # How to use XtraReport's multi-value parameter as a column chooser
 
 
