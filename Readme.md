@@ -6,6 +6,9 @@
 * [SampleReport.Designer.cs](./CS/T333639/SampleReport.Designer.cs) (VB: [SampleReport.Designer.vb](./VB/T333639/SampleReport.Designer.vb))
 <!-- default file list end -->
 # How to use XtraReport's multi-value parameter as a column chooser
+<!-- run online -->
+**[[Run Online]](https://codecentral.devexpress.com/t333639)**
+<!-- run online end -->
 
 
 <p>This example demonstrates how to use a <a href="https://documentation.devexpress.com/#XtraReports/CustomDocument9997">report parameter</a> in multi-value mode to grant an end-user the capability to select columns that should be displayed in the report:</p>
