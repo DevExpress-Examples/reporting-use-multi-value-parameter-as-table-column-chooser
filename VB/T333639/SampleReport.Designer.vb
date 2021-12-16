@@ -24,23 +24,31 @@
         ''' </summary>
         Private Sub InitializeComponent()
             Me.components = New System.ComponentModel.Container()
-            Dim tableQuery1 As New DevExpress.DataAccess.Sql.TableQuery()
-            Dim relationInfo1 As New DevExpress.DataAccess.Sql.RelationInfo()
-            Dim relationColumnInfo1 As New DevExpress.DataAccess.Sql.RelationColumnInfo()
-            Dim relationInfo2 As New DevExpress.DataAccess.Sql.RelationInfo()
-            Dim relationColumnInfo2 As New DevExpress.DataAccess.Sql.RelationColumnInfo()
-            Dim tableInfo1 As New DevExpress.DataAccess.Sql.TableInfo()
-            Dim columnInfo1 As New DevExpress.DataAccess.Sql.ColumnInfo()
-            Dim columnInfo2 As New DevExpress.DataAccess.Sql.ColumnInfo()
-            Dim columnInfo3 As New DevExpress.DataAccess.Sql.ColumnInfo()
-            Dim columnInfo4 As New DevExpress.DataAccess.Sql.ColumnInfo()
-            Dim columnInfo5 As New DevExpress.DataAccess.Sql.ColumnInfo()
-            Dim columnInfo6 As New DevExpress.DataAccess.Sql.ColumnInfo()
-            Dim tableInfo2 As New DevExpress.DataAccess.Sql.TableInfo()
-            Dim columnInfo7 As New DevExpress.DataAccess.Sql.ColumnInfo()
-            Dim tableInfo3 As New DevExpress.DataAccess.Sql.TableInfo()
-            Dim columnInfo8 As New DevExpress.DataAccess.Sql.ColumnInfo()
-            Dim resources As New System.ComponentModel.ComponentResourceManager(GetType(SampleReport))
+            Dim SelectQuery1 As DevExpress.DataAccess.Sql.SelectQuery = New DevExpress.DataAccess.Sql.SelectQuery()
+            Dim Column1 As DevExpress.DataAccess.Sql.Column = New DevExpress.DataAccess.Sql.Column()
+            Dim ColumnExpression1 As DevExpress.DataAccess.Sql.ColumnExpression = New DevExpress.DataAccess.Sql.ColumnExpression()
+            Dim Table1 As DevExpress.DataAccess.Sql.Table = New DevExpress.DataAccess.Sql.Table()
+            Dim Column2 As DevExpress.DataAccess.Sql.Column = New DevExpress.DataAccess.Sql.Column()
+            Dim ColumnExpression2 As DevExpress.DataAccess.Sql.ColumnExpression = New DevExpress.DataAccess.Sql.ColumnExpression()
+            Dim Column3 As DevExpress.DataAccess.Sql.Column = New DevExpress.DataAccess.Sql.Column()
+            Dim ColumnExpression3 As DevExpress.DataAccess.Sql.ColumnExpression = New DevExpress.DataAccess.Sql.ColumnExpression()
+            Dim Column4 As DevExpress.DataAccess.Sql.Column = New DevExpress.DataAccess.Sql.Column()
+            Dim ColumnExpression4 As DevExpress.DataAccess.Sql.ColumnExpression = New DevExpress.DataAccess.Sql.ColumnExpression()
+            Dim Column5 As DevExpress.DataAccess.Sql.Column = New DevExpress.DataAccess.Sql.Column()
+            Dim ColumnExpression5 As DevExpress.DataAccess.Sql.ColumnExpression = New DevExpress.DataAccess.Sql.ColumnExpression()
+            Dim Column6 As DevExpress.DataAccess.Sql.Column = New DevExpress.DataAccess.Sql.Column()
+            Dim ColumnExpression6 As DevExpress.DataAccess.Sql.ColumnExpression = New DevExpress.DataAccess.Sql.ColumnExpression()
+            Dim Column7 As DevExpress.DataAccess.Sql.Column = New DevExpress.DataAccess.Sql.Column()
+            Dim ColumnExpression7 As DevExpress.DataAccess.Sql.ColumnExpression = New DevExpress.DataAccess.Sql.ColumnExpression()
+            Dim Table2 As DevExpress.DataAccess.Sql.Table = New DevExpress.DataAccess.Sql.Table()
+            Dim Column8 As DevExpress.DataAccess.Sql.Column = New DevExpress.DataAccess.Sql.Column()
+            Dim ColumnExpression8 As DevExpress.DataAccess.Sql.ColumnExpression = New DevExpress.DataAccess.Sql.ColumnExpression()
+            Dim Table3 As DevExpress.DataAccess.Sql.Table = New DevExpress.DataAccess.Sql.Table()
+            Dim Join1 As DevExpress.DataAccess.Sql.Join = New DevExpress.DataAccess.Sql.Join()
+            Dim RelationColumnInfo1 As DevExpress.DataAccess.Sql.RelationColumnInfo = New DevExpress.DataAccess.Sql.RelationColumnInfo()
+            Dim Join2 As DevExpress.DataAccess.Sql.Join = New DevExpress.DataAccess.Sql.Join()
+            Dim RelationColumnInfo2 As DevExpress.DataAccess.Sql.RelationColumnInfo = New DevExpress.DataAccess.Sql.RelationColumnInfo()
+            Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SampleReport))
             Me.Detail = New DevExpress.XtraReports.UI.DetailBand()
             Me.tblDetail = New DevExpress.XtraReports.UI.XRTable()
             Me.trDetail = New DevExpress.XtraReports.UI.XRTableRow()
@@ -55,167 +63,191 @@
             Me.ReportHeader = New DevExpress.XtraReports.UI.ReportHeaderBand()
             Me.xrLabel1 = New DevExpress.XtraReports.UI.XRLabel()
             Me.sqlDataSource1 = New DevExpress.DataAccess.Sql.SqlDataSource(Me.components)
-            DirectCast(Me.tblDetail, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me.tblHeader, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me, System.ComponentModel.ISupportInitialize).BeginInit()
-            ' 
-            ' Detail
-            ' 
-            Me.Detail.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() { Me.tblDetail})
-            Me.Detail.HeightF = 25F
+            CType(Me.tblDetail, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.tblHeader, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
+            '
+            'Detail
+            '
+            Me.Detail.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.tblDetail})
+            Me.Detail.HeightF = 25.0!
             Me.Detail.Name = "Detail"
             Me.Detail.StylePriority.UsePadding = False
             Me.Detail.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
-            ' 
-            ' tblDetail
-            ' 
-            Me.tblDetail.Borders = (CType(((DevExpress.XtraPrinting.BorderSide.Left Or DevExpress.XtraPrinting.BorderSide.Right) Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide))
-            Me.tblDetail.LocationFloat = New DevExpress.Utils.PointFloat(0F, 0F)
+            '
+            'tblDetail
+            '
+            Me.tblDetail.Borders = CType(((DevExpress.XtraPrinting.BorderSide.Left Or DevExpress.XtraPrinting.BorderSide.Right) _
+            Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
+            Me.tblDetail.LocationFloat = New DevExpress.Utils.PointFloat(0!, 0!)
             Me.tblDetail.Name = "tblDetail"
-            Me.tblDetail.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() { Me.trDetail})
-            Me.tblDetail.SizeF = New System.Drawing.SizeF(650F, 25F)
+            Me.tblDetail.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.trDetail})
+            Me.tblDetail.SizeF = New System.Drawing.SizeF(650.0!, 25.0!)
             Me.tblDetail.StylePriority.UseBorders = False
-            ' 
-            ' trDetail
-            ' 
-            Me.trDetail.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() { Me.xrTableCell2})
+            '
+            'trDetail
+            '
+            Me.trDetail.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.xrTableCell2})
             Me.trDetail.Name = "trDetail"
-            Me.trDetail.Weight = 1R
-            ' 
-            ' xrTableCell2
-            ' 
-            Me.xrTableCell2.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() { New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Products.ID")})
+            Me.trDetail.Weight = 1.0R
+            '
+            'xrTableCell2
+            '
+            Me.xrTableCell2.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[ID]")})
             Me.xrTableCell2.Name = "xrTableCell2"
             Me.xrTableCell2.Text = "xrTableCell2"
-            Me.xrTableCell2.Weight = 1R
-            ' 
-            ' TopMargin
-            ' 
-            Me.TopMargin.HeightF = 100F
+            Me.xrTableCell2.Weight = 1.0R
+            '
+            'TopMargin
+            '
             Me.TopMargin.Name = "TopMargin"
-            Me.TopMargin.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F)
+            Me.TopMargin.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100.0!)
             Me.TopMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
-            ' 
-            ' BottomMargin
-            ' 
-            Me.BottomMargin.HeightF = 100F
+            '
+            'BottomMargin
+            '
             Me.BottomMargin.Name = "BottomMargin"
-            Me.BottomMargin.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F)
+            Me.BottomMargin.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100.0!)
             Me.BottomMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
-            ' 
-            ' ReportColumns
-            ' 
+            '
+            'ReportColumns
+            '
             Me.ReportColumns.Description = "Columns"
             Me.ReportColumns.MultiValue = True
             Me.ReportColumns.Name = "ReportColumns"
-            ' 
-            ' GroupHeader1
-            ' 
-            Me.GroupHeader1.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() { Me.tblHeader})
-            Me.GroupHeader1.HeightF = 25F
+            '
+            'GroupHeader1
+            '
+            Me.GroupHeader1.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.tblHeader})
+            Me.GroupHeader1.HeightF = 25.0!
             Me.GroupHeader1.Name = "GroupHeader1"
             Me.GroupHeader1.RepeatEveryPage = True
             Me.GroupHeader1.StylePriority.UseBorders = False
-            ' 
-            ' tblHeader
-            ' 
-            Me.tblHeader.Borders = (CType((((DevExpress.XtraPrinting.BorderSide.Left Or DevExpress.XtraPrinting.BorderSide.Top) Or DevExpress.XtraPrinting.BorderSide.Right) Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide))
-            Me.tblHeader.Font = New System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold)
-            Me.tblHeader.LocationFloat = New DevExpress.Utils.PointFloat(0F, 0F)
+            '
+            'tblHeader
+            '
+            Me.tblHeader.Borders = CType((((DevExpress.XtraPrinting.BorderSide.Left Or DevExpress.XtraPrinting.BorderSide.Top) _
+            Or DevExpress.XtraPrinting.BorderSide.Right) _
+            Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
+            Me.tblHeader.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
+            Me.tblHeader.LocationFloat = New DevExpress.Utils.PointFloat(0!, 0!)
             Me.tblHeader.Name = "tblHeader"
-            Me.tblHeader.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() { Me.trHeader})
-            Me.tblHeader.SizeF = New System.Drawing.SizeF(650F, 25F)
+            Me.tblHeader.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.trHeader})
+            Me.tblHeader.SizeF = New System.Drawing.SizeF(650.0!, 25.0!)
             Me.tblHeader.StylePriority.UseBorders = False
             Me.tblHeader.StylePriority.UseFont = False
-            ' 
-            ' trHeader
-            ' 
-            Me.trHeader.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() { Me.xrTableCell1})
+            '
+            'trHeader
+            '
+            Me.trHeader.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.xrTableCell1})
             Me.trHeader.Name = "trHeader"
-            Me.trHeader.Weight = 1R
-            ' 
-            ' xrTableCell1
-            ' 
+            Me.trHeader.Weight = 1.0R
+            '
+            'xrTableCell1
+            '
             Me.xrTableCell1.Name = "xrTableCell1"
             Me.xrTableCell1.StylePriority.UseTextAlignment = False
             Me.xrTableCell1.Text = "ID"
             Me.xrTableCell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.BottomCenter
-            Me.xrTableCell1.Weight = 1R
-            ' 
-            ' ReportHeader
-            ' 
-            Me.ReportHeader.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() { Me.xrLabel1})
-            Me.ReportHeader.HeightF = 100F
+            Me.xrTableCell1.Weight = 1.0R
+            '
+            'ReportHeader
+            '
+            Me.ReportHeader.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.xrLabel1})
             Me.ReportHeader.Name = "ReportHeader"
-            ' 
-            ' xrLabel1
-            ' 
-            Me.xrLabel1.Font = New System.Drawing.Font("Times New Roman", 48F)
-            Me.xrLabel1.LocationFloat = New DevExpress.Utils.PointFloat(10.00001F, 10.00001F)
+            '
+            'xrLabel1
+            '
+            Me.xrLabel1.Font = New System.Drawing.Font("Times New Roman", 48.0!)
+            Me.xrLabel1.LocationFloat = New DevExpress.Utils.PointFloat(10.00001!, 10.00001!)
             Me.xrLabel1.Name = "xrLabel1"
-            Me.xrLabel1.SizeF = New System.Drawing.SizeF(629.9999F, 79.99998F)
+            Me.xrLabel1.SizeF = New System.Drawing.SizeF(629.9999!, 79.99998!)
             Me.xrLabel1.StylePriority.UseFont = False
             Me.xrLabel1.StylePriority.UsePadding = False
             Me.xrLabel1.StylePriority.UseTextAlignment = False
             Me.xrLabel1.Text = "Products"
             Me.xrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
-            ' 
-            ' sqlDataSource1
-            ' 
+            '
+            'sqlDataSource1
+            '
             Me.sqlDataSource1.ConnectionName = "Northwind"
             Me.sqlDataSource1.Name = "sqlDataSource1"
-            tableQuery1.Name = "Products"
-            relationColumnInfo1.NestedKeyColumn = "SupplierID"
-            relationColumnInfo1.ParentKeyColumn = "SupplierID"
-            relationInfo1.KeyColumns.AddRange(New DevExpress.DataAccess.Sql.RelationColumnInfo() { relationColumnInfo1})
-            relationInfo1.NestedTable = "Suppliers"
-            relationInfo1.ParentTable = "Products"
-            relationColumnInfo2.NestedKeyColumn = "CategoryID"
-            relationColumnInfo2.ParentKeyColumn = "CategoryID"
-            relationInfo2.KeyColumns.AddRange(New DevExpress.DataAccess.Sql.RelationColumnInfo() { relationColumnInfo2})
-            relationInfo2.NestedTable = "Categories"
-            relationInfo2.ParentTable = "Products"
-            tableQuery1.Relations.AddRange(New DevExpress.DataAccess.Sql.RelationInfo() { relationInfo1, relationInfo2})
-            tableInfo1.Name = "Products"
-            columnInfo1.Alias = "ID"
-            columnInfo1.Name = "ProductID"
-            columnInfo2.Alias = "Name"
-            columnInfo2.Name = "ProductName"
-            columnInfo3.Name = "QuantityPerUnit"
-            columnInfo4.Name = "UnitPrice"
-            columnInfo5.Name = "UnitsInStock"
-            columnInfo6.Name = "UnitsOnOrder"
-            tableInfo1.SelectedColumns.AddRange(New DevExpress.DataAccess.Sql.ColumnInfo() { columnInfo1, columnInfo2, columnInfo3, columnInfo4, columnInfo5, columnInfo6})
-            tableInfo2.Name = "Suppliers"
-            columnInfo7.Alias = "Supplier"
-            columnInfo7.Name = "CompanyName"
-            tableInfo2.SelectedColumns.AddRange(New DevExpress.DataAccess.Sql.ColumnInfo() { columnInfo7})
-            tableInfo3.Name = "Categories"
-            columnInfo8.Alias = "Category"
-            columnInfo8.Name = "CategoryName"
-            tableInfo3.SelectedColumns.AddRange(New DevExpress.DataAccess.Sql.ColumnInfo() { columnInfo8})
-            tableQuery1.Tables.AddRange(New DevExpress.DataAccess.Sql.TableInfo() { tableInfo1, tableInfo2, tableInfo3})
-            Me.sqlDataSource1.Queries.AddRange(New DevExpress.DataAccess.Sql.SqlQuery() { tableQuery1})
+            Column1.Alias = "ID"
+            ColumnExpression1.ColumnName = "ProductID"
+            Table1.Name = "Products"
+            ColumnExpression1.Table = Table1
+            Column1.Expression = ColumnExpression1
+            Column2.Alias = "Name"
+            ColumnExpression2.ColumnName = "ProductName"
+            ColumnExpression2.Table = Table1
+            Column2.Expression = ColumnExpression2
+            ColumnExpression3.ColumnName = "QuantityPerUnit"
+            ColumnExpression3.Table = Table1
+            Column3.Expression = ColumnExpression3
+            ColumnExpression4.ColumnName = "UnitPrice"
+            ColumnExpression4.Table = Table1
+            Column4.Expression = ColumnExpression4
+            ColumnExpression5.ColumnName = "UnitsInStock"
+            ColumnExpression5.Table = Table1
+            Column5.Expression = ColumnExpression5
+            ColumnExpression6.ColumnName = "UnitsOnOrder"
+            ColumnExpression6.Table = Table1
+            Column6.Expression = ColumnExpression6
+            Column7.Alias = "Supplier"
+            ColumnExpression7.ColumnName = "CompanyName"
+            Table2.Name = "Suppliers"
+            ColumnExpression7.Table = Table2
+            Column7.Expression = ColumnExpression7
+            Column8.Alias = "Category"
+            ColumnExpression8.ColumnName = "CategoryName"
+            Table3.Name = "Categories"
+            ColumnExpression8.Table = Table3
+            Column8.Expression = ColumnExpression8
+            SelectQuery1.Columns.Add(Column1)
+            SelectQuery1.Columns.Add(Column2)
+            SelectQuery1.Columns.Add(Column3)
+            SelectQuery1.Columns.Add(Column4)
+            SelectQuery1.Columns.Add(Column5)
+            SelectQuery1.Columns.Add(Column6)
+            SelectQuery1.Columns.Add(Column7)
+            SelectQuery1.Columns.Add(Column8)
+            SelectQuery1.Name = "Products"
+            RelationColumnInfo1.NestedKeyColumn = "SupplierID"
+            RelationColumnInfo1.ParentKeyColumn = "SupplierID"
+            Join1.KeyColumns.Add(RelationColumnInfo1)
+            Join1.Nested = Table2
+            Join1.Parent = Table1
+            RelationColumnInfo2.NestedKeyColumn = "CategoryID"
+            RelationColumnInfo2.ParentKeyColumn = "CategoryID"
+            Join2.KeyColumns.Add(RelationColumnInfo2)
+            Join2.Nested = Table3
+            Join2.Parent = Table1
+            SelectQuery1.Relations.Add(Join1)
+            SelectQuery1.Relations.Add(Join2)
+            SelectQuery1.Tables.Add(Table1)
+            SelectQuery1.Tables.Add(Table2)
+            SelectQuery1.Tables.Add(Table3)
+            Me.sqlDataSource1.Queries.AddRange(New DevExpress.DataAccess.Sql.SqlQuery() {SelectQuery1})
             Me.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable")
-            ' 
-            ' SampleReport
-            ' 
-            Me.Bands.AddRange(New DevExpress.XtraReports.UI.Band() { Me.Detail, Me.TopMargin, Me.BottomMargin, Me.GroupHeader1, Me.ReportHeader})
-            Me.ComponentStorage.AddRange(New System.ComponentModel.IComponent() { Me.sqlDataSource1})
+            '
+            'SampleReport
+            '
+            Me.Bands.AddRange(New DevExpress.XtraReports.UI.Band() {Me.Detail, Me.TopMargin, Me.BottomMargin, Me.GroupHeader1, Me.ReportHeader})
+            Me.ComponentStorage.AddRange(New System.ComponentModel.IComponent() {Me.sqlDataSource1})
             Me.DataMember = "Products"
             Me.DataSource = Me.sqlDataSource1
-            Me.Font = New System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (CByte(0)))
-            Me.Padding = New DevExpress.XtraPrinting.PaddingInfo(4, 4, 2, 2, 100F)
-            Me.Parameters.AddRange(New DevExpress.XtraReports.Parameters.Parameter() { Me.ReportColumns})
+            Me.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+            Me.Padding = New DevExpress.XtraPrinting.PaddingInfo(4, 4, 2, 2, 100.0!)
+            Me.Parameters.AddRange(New DevExpress.XtraReports.Parameters.Parameter() {Me.ReportColumns})
             Me.RequestParameters = False
-            Me.Version = "15.2"
-            DirectCast(Me.tblDetail, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me.tblHeader, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me, System.ComponentModel.ISupportInitialize).EndInit()
+            Me.Version = "21.2"
+            CType(Me.tblDetail, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.tblHeader, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
 
         End Sub
 
-        #End Region
+#End Region
 
         Private Detail As DevExpress.XtraReports.UI.DetailBand
         Private TopMargin As DevExpress.XtraReports.UI.TopMarginBand

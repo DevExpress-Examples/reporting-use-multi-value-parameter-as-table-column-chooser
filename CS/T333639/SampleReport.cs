@@ -1,10 +1,7 @@
-﻿using System;
-using System.Drawing;
-using System.Collections;
-using System.ComponentModel;
+using System;
+using System.Linq;
 using DevExpress.XtraReports.UI;
 using DevExpress.XtraReports.Parameters;
-using System.Linq;
 
 namespace T333639 {
     public partial class SampleReport : DevExpress.XtraReports.UI.XtraReport {
@@ -13,6 +10,7 @@ namespace T333639 {
         public SampleReport() {
             InitializeComponent();
 
+            // Initialize a list of lookup values for report columns.
             _reportColumns = new LookUpValueCollection() {
                     new LookUpValue("ID", "ID"),
                     new LookUpValue("Name", "Name"),
@@ -23,31 +21,42 @@ namespace T333639 {
                     new LookUpValue("UnitsOnOrder", "On Order"),
                     new LookUpValue("QuantityPerUnit", "Quantity Per Unit")
             };
-            StaticListLookUpSettings reportColumnsLookUpSettings = new StaticListLookUpSettings();
+
+            var reportColumnsLookUpSettings = new StaticListLookUpSettings();
             reportColumnsLookUpSettings.LookUpValues.AddRange(_reportColumns);
+
+            // Assign the list of lookup values to the report's ReportColumns parameter.
             this.Parameters["ReportColumns"].LookUpSettings = reportColumnsLookUpSettings;
+
+            // Specify default lookup values.
             this.Parameters["ReportColumns"].Value = new string[] { "ID", "Name", "Category", "Supplier", "UnitPrice" };
         }
 
         private void SampleReport_DataSourceDemanded(object sender, EventArgs e) {
-            string[] columns = (string[])this.Parameters["ReportColumns"].Value;
+            // Get the selected report columns.
+            var columns = this.Parameters["ReportColumns"].Value as string[];
             
             this.tblHeader.BeginInit();
             this.tblDetail.BeginInit();
+
             this.trHeader.Cells.Clear();
             this.trDetail.Cells.Clear();
+
+            // Create a table header cell and table body cell for each selected column.
             foreach (string column in columns) {
                 string description = _reportColumns.Single(lookupValue => lookupValue.Value.Equals(column)).Description;
 
-                XRTableCell headerCell = new XRTableCell() {
-                    Text = description
-                };
+                // Assign a column description to the table header cell.
+                var headerCell = new XRTableCell();
+                headerCell.Text = description;
                 this.trHeader.Cells.Add(headerCell);
 
-                XRTableCell detailCell = new XRTableCell();
-                detailCell.DataBindings.Add("Text", null, String.Format("{0}.{1}", this.DataMember, column));
-                this.trDetail.Cells.Add(detailCell);
+                // Bind the table body cell to the column.
+                var bodyCell = new XRTableCell();
+                bodyCell.ExpressionBindings.Add(new ExpressionBinding("Text", "[" + column + "]"));
+                this.trDetail.Cells.Add(bodyCell);
             }
+
             this.tblHeader.EndInit();
             this.tblDetail.EndInit();
         }
