@@ -12,7 +12,7 @@
 <!-- default file list end -->
 # How to use XtraReport's multi-value parameter as a column chooser
 <!-- run online -->
-**[[Run Online]](https://codecentral.devexpress.com/t333639/)**
+**[[Run Online]](https://codecentral.devexpress.com/128604322/)**
 <!-- run online end -->
 
 
