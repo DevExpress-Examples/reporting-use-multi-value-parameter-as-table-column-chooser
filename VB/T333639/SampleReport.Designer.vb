@@ -129,7 +129,7 @@
             Me.tblHeader.Borders = CType((((DevExpress.XtraPrinting.BorderSide.Left Or DevExpress.XtraPrinting.BorderSide.Top) _
             Or DevExpress.XtraPrinting.BorderSide.Right) _
             Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
-            Me.tblHeader.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
+            Me.tblHeader.Font = New DevExpress.Drawing.DXFont("Times New Roman", 12.0!, DevExpress.Drawing.DXFontStyle.Bold)
             Me.tblHeader.LocationFloat = New DevExpress.Utils.PointFloat(0!, 0!)
             Me.tblHeader.Name = "tblHeader"
             Me.tblHeader.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.trHeader})
@@ -158,7 +158,7 @@
             '
             'xrLabel1
             '
-            Me.xrLabel1.Font = New System.Drawing.Font("Times New Roman", 48.0!)
+            Me.xrLabel1.Font = New DevExpress.Drawing.DXFont("Times New Roman", 48.0!)
             Me.xrLabel1.LocationFloat = New DevExpress.Utils.PointFloat(10.00001!, 10.00001!)
             Me.xrLabel1.Name = "xrLabel1"
             Me.xrLabel1.SizeF = New System.Drawing.SizeF(629.9999!, 79.99998!)
@@ -236,7 +236,7 @@
             Me.ComponentStorage.AddRange(New System.ComponentModel.IComponent() {Me.sqlDataSource1})
             Me.DataMember = "Products"
             Me.DataSource = Me.sqlDataSource1
-            Me.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+            Me.Font = New DevExpress.Drawing.DXFont("Times New Roman", 9.75!, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
             Me.Padding = New DevExpress.XtraPrinting.PaddingInfo(4, 4, 2, 2, 100.0!)
             Me.Parameters.AddRange(New DevExpress.XtraReports.Parameters.Parameter() {Me.ReportColumns})
             Me.RequestParameters = False

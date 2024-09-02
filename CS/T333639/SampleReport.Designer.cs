@@ -134,7 +134,7 @@
             this.tblHeader.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.tblHeader.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.tblHeader.Font = new DevExpress.Drawing.DXFont("Times New Roman", 12F, DevExpress.Drawing.DXFontStyle.Bold);
             this.tblHeader.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.tblHeader.Name = "tblHeader";
             this.tblHeader.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
@@ -166,7 +166,7 @@
             // 
             // xrLabel1
             // 
-            this.xrLabel1.Font = new System.Drawing.Font("Times New Roman", 48F);
+            this.xrLabel1.Font = new DevExpress.Drawing.DXFont("Times New Roman", 48F);
             this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 10.00001F);
             this.xrLabel1.Name = "xrLabel1";
             this.xrLabel1.SizeF = new System.Drawing.SizeF(629.9999F, 79.99998F);
@@ -251,7 +251,7 @@
             this.sqlDataSource1});
             this.DataMember = "Products";
             this.DataSource = this.sqlDataSource1;
-            this.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new DevExpress.Drawing.DXFont("Times New Roman", 9.75F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.Padding = new DevExpress.XtraPrinting.PaddingInfo(4, 4, 2, 2, 100F);
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
             this.ReportColumns});
